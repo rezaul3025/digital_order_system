@@ -20,8 +20,7 @@ import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 public class Food {
 	
 	@Id
-	@GeneratedValue(strategy = GenerationType.AUTO)
-	@NotNull
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Integer id;
 
 	@NotNull

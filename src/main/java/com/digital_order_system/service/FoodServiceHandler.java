@@ -35,5 +35,10 @@ public class FoodServiceHandler implements FoodService {
 		return foodRepository.findAll();
 	}
 
+	@Override
+	public Food add(Food food) {
+		return foodRepository.saveAndFlush(food);
+	}
+
 	
 }

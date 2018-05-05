@@ -23,4 +23,16 @@ public class CategoryServiceHandler implements CategoryService {
 		return categoryServiceRepository.findAll();
 	}
 
+	@Override
+	public Category add(Category category) {
+		
+		return categoryServiceRepository.saveAndFlush(category);
+	}
+
+	@Override
+	public Category findById(Integer id) {
+		
+		return categoryServiceRepository.findById(id).get();
+	}
+
 }

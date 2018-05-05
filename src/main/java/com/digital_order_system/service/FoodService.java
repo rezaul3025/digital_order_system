@@ -8,4 +8,6 @@ public interface FoodService {
 	List<Food> getFoodByCategory(Integer id);
 	
 	List<Food> getAll();
+	
+	Food add(Food food);
 }

@@ -13,4 +13,9 @@ public class DigitalOrderSystemController {
 	public String navToIndex(Model model) {
 		return "index";
 	}
+	
+	@GetMapping(value="/admin")
+	public String navToAdmin(Model model) {
+		return "admin/additems";
+	}
 }
