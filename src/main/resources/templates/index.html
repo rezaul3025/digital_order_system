@@ -182,7 +182,7 @@
 
 						<form class="navbar-form" role="search">
 								    <div class="input-group add-on">
-								      <input class="form-control" placeholder="Search Your Item " name="srch-term" id="srch-term" type="text">
+								      <input class="form-control" ng-keyup="filterCategory(categorySearch)" ng-model="categorySearch" placeholder="Search Your Item " name="srch-term" id="srch-term" type="text">
 								      
 								        <button class="btn btn-success btn-md " type="submit">
 								        	<img src="images/searchicon.png" alt="search">

@@ -29,6 +29,8 @@ module.controller('DigitalOrderSystemController', ['$http', '$scope', '$window',
 	            }).then(function succes(response) {
 	               
 	            		$scope.categories = response.data;
+	            		
+	            		$scope.storedCategories = response.data;
 	                
 	            }, function error(response) {
 	            });
@@ -42,6 +44,8 @@ module.controller('DigitalOrderSystemController', ['$http', '$scope', '$window',
             }).then(function succes(response) {
                
             		$scope.foods = response.data;
+            		
+            		$scope.storedFoods = response.data;
                 
             }, function error(response) {
             });
@@ -58,7 +62,17 @@ module.controller('DigitalOrderSystemController', ['$http', '$scope', '$window',
                 
             }, function error(response) {
             });
-        }
+        };
+        
+        $scope.filterCategory = function(searchText){
+        	$scope.categories = [];
+        		for(var i in $scope.storedCategories){
+        			if($scope.storedCategories[i].name.toLowerCase().indexOf(searchText) != -1){
+        				var result = $scope.storedCategories[i];
+        				$scope.categories.push(result);
+        			}
+        		}
+        };
 
     }])
     
