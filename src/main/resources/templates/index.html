@@ -226,7 +226,7 @@
 						<div class="col-md-4" id="item">
 	                          <form class="navbar-form" role="search">
 								    <div class="input-group add-on">
-								      <input class="form-control" placeholder="Search Your Food " name="srch-term" id="srch-term" type="text">
+								      <input class="form-control" ng-model="foodSearchText" ng-keyup="filterFood(foodSearchText)" placeholder="Search Your Food " name="srch-term" id="srch-term" type="text">
 								      
 								        <button class="btn btn-success btn-md " type="submit">
 								        	<img src="images/searchicon.png" alt="search">

@@ -59,6 +59,8 @@ module.controller('DigitalOrderSystemController', ['$http', '$scope', '$window',
             }).then(function succes(response) {
                
             		$scope.foods = response.data;
+            		
+            		$scope.storedFoods = response.data;
                 
             }, function error(response) {
             });
@@ -70,6 +72,16 @@ module.controller('DigitalOrderSystemController', ['$http', '$scope', '$window',
         			if($scope.storedCategories[i].name.toLowerCase().indexOf(searchText) != -1){
         				var result = $scope.storedCategories[i];
         				$scope.categories.push(result);
+        			}
+        		}
+        };
+        
+        $scope.filterFood = function(searchText){
+        	$scope.foods = [];
+        		for(var i in $scope.storedFoods){
+        			if($scope.storedFoods[i].name.toLowerCase().indexOf(searchText) != -1){
+        				var result = $scope.storedFoods[i];
+        				$scope.foods.push(result);
         			}
         		}
         };
