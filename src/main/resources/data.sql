@@ -1,3 +1,21 @@
+CREATE TABLE `category` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `name` varchar(255) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=MyISAM AUTO_INCREMENT=12 DEFAULT CHARSET=latin1;
+
+CREATE TABLE `food` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `image_path` varchar(255) DEFAULT NULL,
+  `name` varchar(255) NOT NULL,
+  `price` float DEFAULT NULL,
+  `reduce_price` float DEFAULT NULL,
+  `category_id` int(11) DEFAULT NULL,
+  PRIMARY KEY (`id`),
+  KEY `FKkomdx99dhk2cveaxugl2lws2u` (`category_id`)
+) ENGINE=MyISAM AUTO_INCREMENT=5 DEFAULT CHARSET=latin1;
+
+
 INSERT INTO category(id, name) VALUES(1, 'BURGER');
 INSERT INTO category(id, name) VALUES(2, 'DESI');
 INSERT INTO category(id, name) VALUES(3, 'CHINISE');
